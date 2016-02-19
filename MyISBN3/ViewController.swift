@@ -15,10 +15,24 @@ class ViewController: UIViewController {
     @IBOutlet weak var autores: UILabel!
     @IBOutlet weak var portada: UIImageView!
     @IBOutlet weak var botonBuscar: UIButton!
+    @IBOutlet weak var botonAgregar: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        if activeBook == -1 {
+            // Add a new book to the library
+            isbn.enabled = true
+            botonAgregar.enabled = true
+            botonBuscar.enabled = true
+        }
+        else {
+            // Show current book's information
+            isbn.enabled = false
+            botonAgregar.enabled = false
+            botonBuscar.enabled = false
+        }
     }
 
     override func didReceiveMemoryWarning() {

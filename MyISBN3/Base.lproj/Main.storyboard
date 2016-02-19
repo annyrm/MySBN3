@@ -332,6 +332,7 @@
                     </view>
                     <connections>
                         <outlet property="autores" destination="Eui-5u-QUY" id="9r1-z5-Beb"/>
+                        <outlet property="botonAgregar" destination="3Or-FI-mT8" id="IEG-yD-Xw6"/>
                         <outlet property="botonBuscar" destination="g8V-fP-v79" id="90F-g1-MWf"/>
                         <outlet property="isbn" destination="0gT-5F-Ayj" id="yuJ-Fm-CsV"/>
                         <outlet property="portada" destination="uns-up-zUF" id="22P-yx-5gN"/>
@@ -358,6 +359,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="Nu4-R3-Q8K"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -368,7 +372,7 @@
                     <navigationItem key="navigationItem" title="My Library" id="b79-E3-T9e">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="syK-Mj-SCC">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="TkX-fC-QSI"/>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="newBook" id="TkX-fC-QSI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -398,4 +402,7 @@
         <image name="libros01.png" width="679" height="120"/>
         <image name="sin_portada.png" width="166" height="209"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="TkX-fC-QSI"/>
+    </inferredMetricsTieBreakers>
 </document>
