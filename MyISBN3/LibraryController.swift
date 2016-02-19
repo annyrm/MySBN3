@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import CoreData
 
 var activeBook = -1
+var books = [NSManagedObject]()
 
 class LibraryController: UITableViewController {
 
@@ -36,18 +38,21 @@ class LibraryController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return books.count
     }
     
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
 
         // Configure the cell...
+        let book = books[indexPath.row]
+        
+        cell.textLabel!.text = book.valueForKey("name") as? String
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

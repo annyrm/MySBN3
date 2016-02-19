@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Automatic">
-    <entity name="Books" syncable="YES">
+    <entity name="Book" syncable="YES">
         <attribute name="authors" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cover_m" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cover_s" optional="YES" attributeType="String" syncable="YES"/>
@@ -8,6 +8,6 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Books" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Book" positionX="-63" positionY="-18" width="128" height="120"/>
     </elements>
 </model>
