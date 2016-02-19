@@ -13,6 +13,9 @@
 		F67E211C1C77630600CE16A4 /* MyISBN3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F67E211A1C77630600CE16A4 /* MyISBN3.xcdatamodeld */; };
 		F67E211E1C77630600CE16A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F67E211D1C77630600CE16A4 /* Assets.xcassets */; };
 		F67E21211C77630600CE16A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F67E211F1C77630600CE16A4 /* LaunchScreen.storyboard */; };
+		F67E212A1C776A3100CE16A4 /* libros01.png in Resources */ = {isa = PBXBuildFile; fileRef = F67E21291C776A3100CE16A4 /* libros01.png */; };
+		F67E212C1C777E8200CE16A4 /* sin_portada.png in Resources */ = {isa = PBXBuildFile; fileRef = F67E212B1C777E8200CE16A4 /* sin_portada.png */; };
+		F67E212F1C779C2100CE16A4 /* LibraryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67E212E1C779C2100CE16A4 /* LibraryController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		F67E211D1C77630600CE16A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F67E21201C77630600CE16A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F67E21221C77630600CE16A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F67E21291C776A3100CE16A4 /* libros01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = libros01.png; sourceTree = "<group>"; };
+		F67E212B1C777E8200CE16A4 /* sin_portada.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sin_portada.png; sourceTree = "<group>"; };
+		F67E212E1C779C2100CE16A4 /* LibraryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +62,9 @@
 		F67E21121C77630600CE16A4 /* MyISBN3 */ = {
 			isa = PBXGroup;
 			children = (
+				F67E212D1C779BF900CE16A4 /* Controlers */,
+				F67E21281C776A1B00CE16A4 /* Imagenes */,
 				F67E21131C77630600CE16A4 /* AppDelegate.swift */,
-				F67E21151C77630600CE16A4 /* ViewController.swift */,
 				F67E21171C77630600CE16A4 /* Main.storyboard */,
 				F67E211D1C77630600CE16A4 /* Assets.xcassets */,
 				F67E211F1C77630600CE16A4 /* LaunchScreen.storyboard */,
@@ -65,6 +72,24 @@
 				F67E211A1C77630600CE16A4 /* MyISBN3.xcdatamodeld */,
 			);
 			path = MyISBN3;
+			sourceTree = "<group>";
+		};
+		F67E21281C776A1B00CE16A4 /* Imagenes */ = {
+			isa = PBXGroup;
+			children = (
+				F67E21291C776A3100CE16A4 /* libros01.png */,
+				F67E212B1C777E8200CE16A4 /* sin_portada.png */,
+			);
+			name = Imagenes;
+			sourceTree = "<group>";
+		};
+		F67E212D1C779BF900CE16A4 /* Controlers */ = {
+			isa = PBXGroup;
+			children = (
+				F67E21151C77630600CE16A4 /* ViewController.swift */,
+				F67E212E1C779C2100CE16A4 /* LibraryController.swift */,
+			);
+			name = Controlers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +153,8 @@
 				F67E21211C77630600CE16A4 /* LaunchScreen.storyboard in Resources */,
 				F67E211E1C77630600CE16A4 /* Assets.xcassets in Resources */,
 				F67E21191C77630600CE16A4 /* Main.storyboard in Resources */,
+				F67E212C1C777E8200CE16A4 /* sin_portada.png in Resources */,
+				F67E212A1C776A3100CE16A4 /* libros01.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +168,7 @@
 				F67E211C1C77630600CE16A4 /* MyISBN3.xcdatamodeld in Sources */,
 				F67E21161C77630600CE16A4 /* ViewController.swift in Sources */,
 				F67E21141C77630600CE16A4 /* AppDelegate.swift in Sources */,
+				F67E212F1C779C2100CE16A4 /* LibraryController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

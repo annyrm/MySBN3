@@ -10,6 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var isbn: UITextField!
+    @IBOutlet weak var titulo: UILabel!
+    @IBOutlet weak var autores: UILabel!
+    @IBOutlet weak var portada: UIImageView!
+    @IBOutlet weak var botonBuscar: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
