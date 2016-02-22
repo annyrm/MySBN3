@@ -54,6 +54,59 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func agregarLibro(sender: AnyObject) {
+        let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDel.managedObjectContext
+        let fetchRequest = NSFetchRequest()
+        let entityDescription = NSEntityDescription.entityForName("Book", inManagedObjectContext: context)
+        
+        fetchRequest.entity = entityDescription
+        fetchRequest.returnsObjectsAsFaults = false
+        
+        let resultsPredicate = NSPredicate(format: "isbn = %@", isbnNormal)
+        fetchRequest.predicate = resultsPredicate
+        
+        do {
+            let results : NSArray = try context.executeFetchRequest(fetchRequest)
+            if results.count != 0 {
+                let alert = UIAlertController(title: "Oops", message: "Ya habías agregado este libro", preferredStyle: .Alert)
+                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alert.addAction(defaultAction)
+                self.presentViewController(alert, animated: true, completion: nil)
+                
+                self.botonAgregar.enabled = false
+            } else {
+                let newBook = NSManagedObject(entity: entityDescription!, insertIntoManagedObjectContext: context)
+                
+                newBook.setValue(isbnNormal, forKey: "isbn")
+                newBook.setValue(tituloLibro, forKey: "title")
+                newBook.setValue(autores.text, forKey: "authors")
+                newBook.setValue(portadaChica, forKey: "cover_s")
+                newBook.setValue(portadaMediana, forKey: "cover_m")
+                
+                do {
+                    try newBook.managedObjectContext?.save()
+                    
+                    let alert = UIAlertController(title: "¡Listo!", message: "Has agregado el libro a tu colección", preferredStyle: .Alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                    alert.addAction(defaultAction)
+                    self.presentViewController(alert, animated: true, completion: nil)
+                    
+                    self.botonAgregar.enabled = false
+                } catch {
+                    let alert = UIAlertController(title: "Oops", message: "El libro no pudo ser agregado", preferredStyle: .Alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                    alert.addAction(defaultAction)
+                    self.presentViewController(alert, animated: true, completion: nil)
+                    
+                }
+            }
+        } catch {
+            let alert = UIAlertController(title: "Oops", message: "Verifica que tengas conexión", preferredStyle: .Alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alert.addAction(defaultAction)
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+        }
     }
     
     func buscarISBN() {
@@ -73,17 +126,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
             if dict1Array.count > 0 {
                 let dict1 = json as! NSDictionary
                 let dict2 = dict1["ISBN:" + isbnNormal] as! NSDictionary
-                self.titulo.text = dict2["title"] as! NSString as String
+                tituloLibro = dict2["title"] as! NSString as String
                 let autoresArray = dict2["authors"] as! NSArray
                 for autorLibro in autoresArray {
                     let autorTemp = (autorLibro as! NSDictionary)["name"] as! String
                     autoresLibro += autorTemp
                     autoresLibro += "; "
-                }
-                if (autoresLibro != "") {
-                    self.autores.text = "Escrito por: " + autoresLibro
-                } else {
-                    self.autores.text = "Sin autor registrado"
                 }
                 let dict3 = dict2["cover"] as! NSDictionary
                 let dict3Array = dict3.allKeys
@@ -125,7 +173,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func mostrarInformacion() {
         titulo.text = tituloLibro
-        autores.text = autoresLibro
+        if (autoresLibro != "") {
+            autores.text = "Escrito por: " + autoresLibro
+        } else {
+            autores.text = "Sin autor registrado"
+        }
         
         if portadaMediana != "" {
             let urlImage = NSURL(string: portadaMediana)
@@ -136,7 +188,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 portada.image = UIImage(named: "sin_portada.png")
             }
         } else {
-            portada.image = UIImage(named: "sinportada.png")
+            portada.image = UIImage(named: "sin_portada.png")
         }
         
         botonAgregar.enabled = true
