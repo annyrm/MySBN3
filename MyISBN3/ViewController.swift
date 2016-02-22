@@ -40,6 +40,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
             botonBuscar.enabled = true
         } else {
             // Show the active book's information
+            let book = books[activeBook] 
+            
+            isbnNormal = book.valueForKey("isbn") as! String
+            autoresLibro = book.valueForKey("authors") as! String
+            tituloLibro = book.valueForKey("title") as! String
+            portadaChica = book.valueForKey("cover_s") as! String
+            portadaMediana = book.valueForKey("cover_m") as! String
+            
+            mostrarInformacion()
         }
     }
 
@@ -114,7 +123,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         var cargarDatos : Bool = false
         let myISBN : String? = isbn.text!
         isbnNormal = myISBN!.stringByReplacingOccurrencesOfString("-", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
-        isbn.text = isbnNormal
         let url = NSURL(string: urlBase + isbnNormal)
         let datos = NSData(contentsOfURL: url!)
         
@@ -168,10 +176,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         if cargarDatos {
             mostrarInformacion()
+            botonAgregar.enabled = true
         }
     }
     
     func mostrarInformacion() {
+        isbn.text = isbnNormal
         titulo.text = tituloLibro
         if (autoresLibro != "") {
             autores.text = "Escrito por: " + autoresLibro
@@ -190,8 +200,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         } else {
             portada.image = UIImage(named: "sin_portada.png")
         }
-        
-        botonAgregar.enabled = true
     }
 
 }
