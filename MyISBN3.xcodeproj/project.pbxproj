@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		F667C5271C7CB57500345426 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F667C5261C7CB57500345426 /* Default-568h@2x.png */; };
+		F667C5291C7CDE1D00345426 /* myISBN.png in Resources */ = {isa = PBXBuildFile; fileRef = F667C5281C7CDE1D00345426 /* myISBN.png */; };
+		F667C52C1C7CDF6500345426 /* myISBN058.png in Resources */ = {isa = PBXBuildFile; fileRef = F667C52B1C7CDF6500345426 /* myISBN058.png */; };
+		F667C52E1C7CDFC700345426 /* myISBN080.png in Resources */ = {isa = PBXBuildFile; fileRef = F667C52D1C7CDFC700345426 /* myISBN080.png */; };
+		F667C5301C7CE03200345426 /* myISBN087.png in Resources */ = {isa = PBXBuildFile; fileRef = F667C52F1C7CE03200345426 /* myISBN087.png */; };
+		F667C5321C7CE18B00345426 /* myISBN120.png in Resources */ = {isa = PBXBuildFile; fileRef = F667C5311C7CE18B00345426 /* myISBN120.png */; };
+		F667C5361C7CE27100345426 /* myISBN180.png in Resources */ = {isa = PBXBuildFile; fileRef = F667C5351C7CE27100345426 /* myISBN180.png */; };
 		F67E21141C77630600CE16A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67E21131C77630600CE16A4 /* AppDelegate.swift */; };
 		F67E21161C77630600CE16A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67E21151C77630600CE16A4 /* ViewController.swift */; };
 		F67E21191C77630600CE16A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F67E21171C77630600CE16A4 /* Main.storyboard */; };
@@ -21,6 +27,12 @@
 
 /* Begin PBXFileReference section */
 		F667C5261C7CB57500345426 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		F667C5281C7CDE1D00345426 /* myISBN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myISBN.png; sourceTree = "<group>"; };
+		F667C52B1C7CDF6500345426 /* myISBN058.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myISBN058.png; sourceTree = "<group>"; };
+		F667C52D1C7CDFC700345426 /* myISBN080.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myISBN080.png; sourceTree = "<group>"; };
+		F667C52F1C7CE03200345426 /* myISBN087.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myISBN087.png; sourceTree = "<group>"; };
+		F667C5311C7CE18B00345426 /* myISBN120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myISBN120.png; sourceTree = "<group>"; };
+		F667C5351C7CE27100345426 /* myISBN180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myISBN180.png; sourceTree = "<group>"; };
 		F67E21101C77630600CE16A4 /* MyISBN3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyISBN3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F67E21131C77630600CE16A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F67E21151C77630600CE16A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +57,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F667C52A1C7CDF2300345426 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				F667C52D1C7CDFC700345426 /* myISBN080.png */,
+				F667C52F1C7CE03200345426 /* myISBN087.png */,
+				F667C52B1C7CDF6500345426 /* myISBN058.png */,
+				F667C5311C7CE18B00345426 /* myISBN120.png */,
+				F667C5351C7CE27100345426 /* myISBN180.png */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
 		F67E21071C77630600CE16A4 = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +89,7 @@
 		F67E21121C77630600CE16A4 /* MyISBN3 */ = {
 			isa = PBXGroup;
 			children = (
+				F667C52A1C7CDF2300345426 /* Icons */,
 				F67E212D1C779BF900CE16A4 /* Controlers */,
 				F67E21281C776A1B00CE16A4 /* Imagenes */,
 				F67E21131C77630600CE16A4 /* AppDelegate.swift */,
@@ -80,6 +105,7 @@
 		F67E21281C776A1B00CE16A4 /* Imagenes */ = {
 			isa = PBXGroup;
 			children = (
+				F667C5281C7CDE1D00345426 /* myISBN.png */,
 				F67E21291C776A3100CE16A4 /* libros01.png */,
 				F67E212B1C777E8200CE16A4 /* sin_portada.png */,
 			);
@@ -154,11 +180,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				F67E21211C77630600CE16A4 /* LaunchScreen.storyboard in Resources */,
+				F667C52E1C7CDFC700345426 /* myISBN080.png in Resources */,
 				F67E211E1C77630600CE16A4 /* Assets.xcassets in Resources */,
+				F667C5321C7CE18B00345426 /* myISBN120.png in Resources */,
+				F667C5291C7CDE1D00345426 /* myISBN.png in Resources */,
 				F67E21191C77630600CE16A4 /* Main.storyboard in Resources */,
+				F667C5301C7CE03200345426 /* myISBN087.png in Resources */,
+				F667C5361C7CE27100345426 /* myISBN180.png in Resources */,
 				F67E212C1C777E8200CE16A4 /* sin_portada.png in Resources */,
 				F67E212A1C776A3100CE16A4 /* libros01.png in Resources */,
 				F667C5271C7CB57500345426 /* Default-568h@2x.png in Resources */,
+				F667C52C1C7CDF6500345426 /* myISBN058.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

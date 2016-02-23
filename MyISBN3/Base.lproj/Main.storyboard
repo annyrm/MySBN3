@@ -63,7 +63,7 @@
                                     <constraint firstAttribute="height" constant="30" id="Y1A-XR-XKR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="search"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="Y1A-XR-XKR"/>

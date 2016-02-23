@@ -65,7 +65,19 @@ class LibraryController: UITableViewController {
         let book = books[indexPath.row]
         
         cell.textLabel!.text = book.valueForKey("title") as? String
-
+        let imagen = book.valueForKey("cover_s") as? String
+        
+        if imagen == "" {
+            cell.imageView?.image = UIImage(named: "sin_portada.png")
+        } else {
+            let urlImage = NSURL(string: imagen!)
+            let datos = NSData(contentsOfURL: urlImage!)
+            if datos != nil {
+                cell.imageView?.image = UIImage(data: datos!)
+            } else {
+                cell.imageView?.image = UIImage(named: "sin_portada.png")
+            }
+        }
         return cell
     }
     
