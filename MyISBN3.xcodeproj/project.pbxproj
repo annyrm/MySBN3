@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F667C5271C7CB57500345426 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F667C5261C7CB57500345426 /* Default-568h@2x.png */; };
 		F67E21141C77630600CE16A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67E21131C77630600CE16A4 /* AppDelegate.swift */; };
 		F67E21161C77630600CE16A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67E21151C77630600CE16A4 /* ViewController.swift */; };
 		F67E21191C77630600CE16A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F67E21171C77630600CE16A4 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F667C5261C7CB57500345426 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		F67E21101C77630600CE16A4 /* MyISBN3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyISBN3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F67E21131C77630600CE16A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F67E21151C77630600CE16A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +48,7 @@
 		F67E21071C77630600CE16A4 = {
 			isa = PBXGroup;
 			children = (
+				F667C5261C7CB57500345426 /* Default-568h@2x.png */,
 				F67E21121C77630600CE16A4 /* MyISBN3 */,
 				F67E21111C77630600CE16A4 /* Products */,
 			);
@@ -155,6 +158,7 @@
 				F67E21191C77630600CE16A4 /* Main.storyboard in Resources */,
 				F67E212C1C777E8200CE16A4 /* sin_portada.png in Resources */,
 				F67E212A1C776A3100CE16A4 /* libros01.png in Resources */,
+				F667C5271C7CB57500345426 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +320,7 @@
 				F67E21271C77630600CE16A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

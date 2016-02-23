@@ -95,7 +95,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 do {
                     try newBook.managedObjectContext?.save()
                     
-                    let alert = UIAlertController(title: "¡Listo!", message: "Has agregado el libro a tu colección", preferredStyle: .Alert)
+                    let alert = UIAlertController(title: "Listo", message: "Has agregado el libro a tu colección", preferredStyle: .Alert)
                     let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
                     alert.addAction(defaultAction)
                     self.presentViewController(alert, animated: true, completion: nil)
@@ -106,7 +106,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
                     alert.addAction(defaultAction)
                     self.presentViewController(alert, animated: true, completion: nil)
-                    
+
                 }
             }
         } catch {
@@ -122,6 +122,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let urlBase : String = "https://openlibrary.org/api/books?jscmd=data&format=json&bibkeys=ISBN:"
         var cargarDatos : Bool = false
         let myISBN : String? = isbn.text!
+        
+        isbn.resignFirstResponder()
+        
+        isbnNormal = myISBN!
         isbnNormal = myISBN!.stringByReplacingOccurrencesOfString("-", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
         let url = NSURL(string: urlBase + isbnNormal)
         let datos = NSData(contentsOfURL: url!)
@@ -172,11 +176,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
             let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
             alert.addAction(defaultAction)
             self.presentViewController(alert, animated: true, completion: nil)
+            
+            /* 978-0-7653-2594-5 */
         }
         
         if cargarDatos {
-            mostrarInformacion()
             botonAgregar.enabled = true
+            mostrarInformacion()
         }
     }
     
@@ -200,6 +206,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
         } else {
             portada.image = UIImage(named: "sin_portada.png")
         }
+    }
+
+    // Esta función me permite ocultar el teclado una vez que toco mi pantalla fuera del campo de texto.
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    // Esta función también me ayuda a ocultar el teclado
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        isbn.resignFirstResponder()
+        buscarISBN()
+        return true
     }
 
 }
