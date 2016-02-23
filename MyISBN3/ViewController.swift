@@ -88,7 +88,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 
                 newBook.setValue(isbnNormal, forKey: "isbn")
                 newBook.setValue(tituloLibro, forKey: "title")
-                newBook.setValue(autores.text, forKey: "authors")
+                newBook.setValue(autoresLibro, forKey: "authors")
                 newBook.setValue(portadaChica, forKey: "cover_s")
                 newBook.setValue(portadaMediana, forKey: "cover_m")
                 
